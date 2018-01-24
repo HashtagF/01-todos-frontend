@@ -24,6 +24,13 @@ export const store = new Vuex.Store({
     },
     STATUS_TODO (state, index) {
       state.todos[index].completed = !state.todos[index].completed
+    },
+    CLEAR_TODOS (state) {
+      for (let i = state.todos.length - 1; i >= 0; i--) {
+        if (state.todos[i].completed) {
+          state.todos.splice(i, 1)
+        }
+      }
     }
   },
   actions: {
@@ -38,6 +45,9 @@ export const store = new Vuex.Store({
     },
     statusTodo ({commit}, index) {
       commit('STATUS_TODO', index)
+    },
+    clearTodos ({commit}) {
+      commit('CLEAR_TODOS')
     }
   },
   getters: {
