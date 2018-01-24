@@ -2,8 +2,10 @@
   <div>
     <div v-for="(todo, index) in filterTodo" :key="todo.title">
       <b-field class="is-pulled-left">
-        <b-checkbox size="is-large" v-if="todo.completed" :value="todo.completed" @input="statusTodo(index)"><strike>{{ todo.title }}</strike></b-checkbox>
-        <b-checkbox size="is-large" v-else @input="statusTodo(index)">{{ todo.title }}</b-checkbox>
+        <b-checkbox size="is-large" :value="todo.completed" @input="statusTodo(index)">
+          <strike v-if="todo.completed">{{ todo.title }}</strike>
+          <span v-else >{{ todo.title }}</span>
+        </b-checkbox>
       </b-field>
       <a class="delete is-pulled-right" @click="delTodo(index)" ></a>
       <div class="is-clearfix"></div>
