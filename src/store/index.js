@@ -48,6 +48,9 @@ export const store = new Vuex.Store({
     },
     clearTodos ({commit}) {
       commit('CLEAR_TODOS')
+    },
+    localStorage ({state}) {
+      localStorage.setItem('todos', JSON.stringify(state.todos))
     }
   },
   getters: {

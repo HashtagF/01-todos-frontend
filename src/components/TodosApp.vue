@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import NewTodoInput from '@/components/NewTodoInput'
 import Todos from '@/components/Todos'
 import TodosFooter from '@/components/TodosFooter'
@@ -24,6 +25,12 @@ export default {
     NewTodoInput,
     Todos,
     TodosFooter
+  },
+  methods: {
+    ...mapActions(['localStorage'])
+  },
+  created () {
+    this.localStorage(JSON.parse(localStorage.getItem('todos')))
   }
 }
 </script>
