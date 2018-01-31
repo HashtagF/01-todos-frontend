@@ -27,10 +27,10 @@ export default {
     TodosFooter
   },
   methods: {
-    ...mapActions(['localStorage'])
+    ...mapActions(['setTodos'])
   },
   created () {
-    this.localStorage(JSON.parse(localStorage.getItem('todos')))
+    this.setTodos(JSON.parse(localStorage.getItem('todos')))
   }
 }
 </script>
