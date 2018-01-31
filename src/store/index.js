@@ -32,8 +32,11 @@ export const store = new Vuex.Store({
         }
       }
     },
-    SETTODOS (state, todos) {
+    SET_TODOS (state, todos) {
       state.todos = todos
+    },
+    SORT_TABLE (state, index) {
+      state.todos.splice(index.newIndex, 0, state.todos.splice(index.oldIndex, 1)[0])
     }
   },
   actions: {
@@ -60,7 +63,11 @@ export const store = new Vuex.Store({
       localStorage.setItem('todos', JSON.stringify(state.todos))
     },
     setTodos ({commit}, todos) {
-      commit('SETTODOS', todos)
+      commit('SET_TODOS', todos)
+    },
+    sortTable ({commit, dispatch}, index) {
+      commit('SORT_TABLE', index)
+      dispatch('saveStorage')
     }
   },
   getters: {
