@@ -48,8 +48,9 @@ export const store = new Vuex.Store({
       commit('DEL_TODO', index)
       dispatch('saveStorage')
     },
-    statusTodo ({commit}, index) {
+    statusTodo ({commit, dispatch}, index) {
       commit('STATUS_TODO', index)
+      dispatch('saveStorage')
     },
     clearTodos ({commit, dispatch}) {
       commit('CLEAR_TODOS')
