@@ -45,7 +45,8 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 * [x] Challenge 4
 * [x] Challenge 5
 * [x] Challenge 6
-* [ ] Challenge 7
-* [ ] Challenge 8
+* [x] Challenge 7
+* [x] Challenge 8
+  [x] Challenge 9
 
 ถ้ามีข้อสงสัยหรือติดปัญหาสามารถเปิด Issue ขึ้นมาใหม่ได้เลย
